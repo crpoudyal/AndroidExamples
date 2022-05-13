@@ -75,6 +75,9 @@ public class NavActivity extends AppCompatActivity {
                        Intent fragment = new Intent(NavActivity.this,FragmentExampleActivity.class);
                        startActivity(fragment);
                        break;
+                   case R.id.listview:
+                       Intent listview = new Intent(NavActivity.this,ListExampleActivity.class);
+                       startActivity(listview);
                }
                drawerLayout.closeDrawers();
                return true;

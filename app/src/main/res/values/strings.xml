@@ -2,4 +2,9 @@
     <string name="app_name">AndroidExamples</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <array name="dialog_item">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+    </array>
 </resources>
