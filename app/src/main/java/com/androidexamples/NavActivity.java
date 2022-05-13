@@ -37,7 +37,8 @@ public class NavActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
 
 
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,new WelcomeFrag(),
+                "Welcome Fragment").commitAllowingStateLoss();
 
        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
            @Override
@@ -56,7 +57,7 @@ public class NavActivity extends AppCompatActivity {
 
                    case R.id.form:
                        getSupportFragmentManager().beginTransaction().replace(R.id.container,new FormFrag(),
-                               "Layout Fragment").commitAllowingStateLoss();
+                               "Form Fragment").commitAllowingStateLoss();
                        break;
 
                    case R.id.intent:
@@ -78,6 +79,10 @@ public class NavActivity extends AppCompatActivity {
                    case R.id.listview:
                        Intent listview = new Intent(NavActivity.this,ListExampleActivity.class);
                        startActivity(listview);
+                   case R.id.gridview:
+                       getSupportFragmentManager().beginTransaction().replace(R.id.container,new GridViewExampleFrag(),
+                               "Gridview Fragment").commitAllowingStateLoss();
+                       break;
                }
                drawerLayout.closeDrawers();
                return true;

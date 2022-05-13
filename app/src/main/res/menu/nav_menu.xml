@@ -30,7 +30,4 @@
     <item android:id="@+id/frag"
         android:title="Fragment"
         />
-    <item android:id="@+id/database"
-        android:title="Database"
-        />
 </menu>
