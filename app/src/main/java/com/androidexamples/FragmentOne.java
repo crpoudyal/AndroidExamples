@@ -17,7 +17,7 @@ public class FragmentOne extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.widget_frag,container,false);
+        View view = inflater.inflate(R.layout.fragment_one,container,false);
 
         next = view.findViewById(R.id.next);
 
@@ -25,7 +25,7 @@ public class FragmentOne extends Fragment {
             @Override
             public void onClick(View view) {
                 LayoutFrag frag = new LayoutFrag();
-                FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new LinerLayoutFrag());
+                FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.fragment_one, new LinerLayoutFrag());
                 ft.commit();
             }
         });
