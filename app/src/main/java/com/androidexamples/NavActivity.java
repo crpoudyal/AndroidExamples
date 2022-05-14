@@ -83,6 +83,10 @@ public class NavActivity extends AppCompatActivity {
                        getSupportFragmentManager().beginTransaction().replace(R.id.container,new GridViewExampleFrag(),
                                "Gridview Fragment").commitAllowingStateLoss();
                        break;
+                   case R.id.recyclerview:
+                       Intent recycler = new Intent(NavActivity.this,RecyclerActivity.class);
+                       startActivity(recycler);
+                       break;
                }
                drawerLayout.closeDrawers();
                return true;

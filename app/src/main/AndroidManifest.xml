@@ -23,6 +23,7 @@
         <activity android:name=".UserFormDataActivity"/>
         <activity android:name=".FragmentExampleActivity"/>
         <activity android:name=".ListExampleActivity"/>
+        <activity android:name=".RecyclerActivity"/>
     </application>
 
 </manifest>
