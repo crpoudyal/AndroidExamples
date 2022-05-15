@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:layout_marginTop="96dp"
         android:text="This is Constraint Layout example"
+        app:layout_constraintBottom_toTopOf="@+id/layout3"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="8dp" />
 
@@ -28,8 +30,8 @@
 
     <TextView
         android:id="@+id/layout2"
-        android:layout_width="227dp"
-        android:layout_height="26dp"
+        android:layout_width="126dp"
+        android:layout_height="21dp"
         android:layout_margin="8dp"
 
         android:text="Layout 2"

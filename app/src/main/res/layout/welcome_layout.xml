@@ -9,8 +9,9 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to AndroidExample \n Application"
+        android:text="@string/welcome"
         android:textAlignment="center"
         android:textSize="20sp" />
 
 </LinearLayout>
+

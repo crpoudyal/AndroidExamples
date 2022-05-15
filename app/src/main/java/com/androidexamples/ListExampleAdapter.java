@@ -39,8 +39,9 @@ public class ListExampleAdapter extends ArrayAdapter<ListData> {
             convertView = mInflater.inflate(R.layout.list_item_view,parent,false);
             viewHolder = new ViewHolder();
 
-            viewHolder.tvDescription = convertView.findViewById(R.id.tv_des);
-            viewHolder.tvTitle = convertView.findViewById(R.id.tv_header);
+            viewHolder.tvName = convertView.findViewById(R.id.tv_name);
+            viewHolder.tvAddress = convertView.findViewById(R.id.tv_addr);
+
 
             convertView.setTag(viewHolder);
 
@@ -48,8 +49,8 @@ public class ListExampleAdapter extends ArrayAdapter<ListData> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.tvTitle.setText(item.getTitle());
-        viewHolder.tvDescription.setText(item.getDescription());
+        viewHolder.tvName.setText(item.getName());
+        viewHolder.tvAddress.setText(item.getAddress());
 
         return convertView;
 
@@ -61,6 +62,6 @@ public class ListExampleAdapter extends ArrayAdapter<ListData> {
     }
 
     public  class ViewHolder{
-        public TextView tvTitle,tvDescription;
+        public TextView tvName,tvAddress;
     }
 }

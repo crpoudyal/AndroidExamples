@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:id="@+id/widgets"
-    android:title="Widgets"
-    />
-    <item android:id="@+id/layouts"
-        android:title="Layouts"
-        />
-    <item android:id="@+id/form"
-        android:title="Form validation"
-        />
-    <item android:id="@+id/intent"
-        android:title="Passing data between activity"
-        />
-    <item android:id="@+id/menu"
-        android:title="menu"
-        />
-    <item android:id="@+id/dialog"
-        android:title="Dialog Box"
-        />
-    <item android:id="@+id/listview"
-        android:title="Listview"
-        />
-    <item android:id="@+id/gridview"
-        android:title="Gridview"
-        />
-    <item android:id="@+id/recyclerview"
-        android:title="recyclerview"
-        />
-    <item android:id="@+id/frag"
-        android:title="Fragment"
-        />
+    <item
+        android:id="@+id/widgets"
+        android:title="Widgets" />
+    <item
+        android:id="@+id/layouts"
+        android:title="Layouts" />
+    <item
+        android:id="@+id/form"
+        android:title="Form validation" />
+    <item
+        android:id="@+id/intent"
+        android:title="Passing data between activity" />
+    <item
+        android:id="@+id/menu"
+        android:title="menu" />
+    <item
+        android:id="@+id/dialog"
+        android:title="Dialog Box" />
+    <item
+        android:id="@+id/listview"
+        android:title="Listview" />
+    <item
+        android:id="@+id/gridview"
+        android:title="Gridview" />
+    <item
+        android:id="@+id/recyclerview"
+        android:title="recyclerview" />
+    <item
+        android:id="@+id/frag"
+        android:title="Fragment" />
 </menu>

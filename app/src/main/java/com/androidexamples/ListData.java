@@ -1,27 +1,27 @@
 package com.androidexamples;
 
 public class ListData {
-    private String title,description;
-    public ListData(String title,String description){
+    private String name,address;
+    public ListData(String name,String address){
 
-        this.title = title;
-        this.description = description;
+        this.name = name;
+        this.address = address;
 
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

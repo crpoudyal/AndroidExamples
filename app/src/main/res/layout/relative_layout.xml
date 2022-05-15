@@ -2,54 +2,57 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="This is Relative Layout example" />
+
     <TextView
         android:id="@+id/layout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Layout 1"
         android:layout_below="@id/title"
-        />
+        android:layout_margin="8dp"
+        android:text="Layout 1" />
+
     <TextView
         android:id="@+id/layout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Layout 2"
         android:layout_below="@id/title"
+        android:layout_margin="8dp"
         android:layout_toRightOf="@id/layout1"
-        />
+        android:text="Layout 2" />
+
     <TextView
         android:id="@+id/layout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:layout_below="@id/layout2"
+        android:layout_margin="8dp"
         android:text="Layout 3" />
+
     <TextView
         android:id="@+id/layout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/layout3"
         android:layout_margin="8dp"
         android:layout_toRightOf="@id/layout2"
-        android:layout_below="@id/layout3"
         android:text="Layout 4" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_200"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        android:text="This is button"
         android:layout_below="@id/layout4"
-        />
-
-
+        android:background="@color/teal_200"
+        android:text="This is button"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 </RelativeLayout>
+
+

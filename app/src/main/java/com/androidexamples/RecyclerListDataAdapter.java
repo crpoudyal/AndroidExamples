@@ -35,8 +35,8 @@ public class RecyclerListDataAdapter extends RecyclerView.Adapter<RecyclerListDa
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ListData data = listItems.get(position);
 
-        holder.tvTitle.setText(data.getTitle());
-        holder.tvDescription.setText(data.getDescription());
+        holder.tvName.setText(data.getName());
+        holder.tvAddress.setText(data.getAddress());
 
     }
 
@@ -51,13 +51,13 @@ public class RecyclerListDataAdapter extends RecyclerView.Adapter<RecyclerListDa
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tvTitle,tvDescription;
+        TextView tvName,tvAddress;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvTitle = itemView.findViewById(R.id.tv_header);
-            tvDescription = itemView.findViewById(R.id.tv_des);
+            tvName = itemView.findViewById(R.id.tv_name);
+            tvAddress = itemView.findViewById(R.id.tv_addr);
 
         }
     }

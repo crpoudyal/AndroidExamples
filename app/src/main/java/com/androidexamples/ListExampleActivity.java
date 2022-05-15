@@ -28,12 +28,11 @@ public class ListExampleActivity extends AppCompatActivity {
     public ListView lvTest;
     public ArrayList<ListData> listItems;
     private ListExampleAdapter mAdapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview_layout);
-
-
 
 
         toolbar = findViewById(R.id.toolbar);
@@ -45,16 +44,16 @@ public class ListExampleActivity extends AppCompatActivity {
         lvTest = findViewById(R.id.lv_text);
 
         listItems = new ArrayList<>();
-        listItems.add(new ListData("Android","This is description for title"));
-        listItems.add(new ListData("Android","This is description for title"));
-        mAdapter = new ListExampleAdapter(this,listItems);
+        listItems.add(new ListData("Hari", "Kathmandu"));
+        listItems.add(new ListData("Krishna", "Biratnagar"));
+        mAdapter = new ListExampleAdapter(this, listItems);
 
         lvTest.setAdapter(mAdapter);
         lvTest.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                Toast.makeText(ListExampleActivity.this, "Item Clicked "+position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListExampleActivity.this, "Item Clicked " + position, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -69,8 +68,8 @@ public class ListExampleActivity extends AppCompatActivity {
 
     }
 
-    private void showConformationDialog(){
-        AlertDialog.Builder builder = new  AlertDialog.Builder(ListExampleActivity.this).setTitle("Warning").
+    private void showConformationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ListExampleActivity.this).setTitle("Warning").
                 setMessage("Did you want to Delete?").
                 setCancelable(false).
                 setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -90,14 +89,13 @@ public class ListExampleActivity extends AppCompatActivity {
     }
 
 
-
-    private void showOptionDialog(){
+    private void showOptionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(ListExampleActivity.this).setTitle("Choose any option")
                 .setItems(R.array.dialog_item, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
-                        Toast.makeText(ListExampleActivity.this, "You have clicked position "+i, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ListExampleActivity.this, "You have clicked position " + i, Toast.LENGTH_SHORT).show();
                     }
                 });
         AlertDialog dialog = builder.create(); //Create only not display
@@ -105,18 +103,18 @@ public class ListExampleActivity extends AppCompatActivity {
 
     }
 
-    private void showMultipleOptionDialog(){
+    private void showMultipleOptionDialog() {
 
-        final int[] count  = {0};
-        AlertDialog.Builder builder  = new AlertDialog.Builder(ListExampleActivity.this)
+        final int[] count = {0};
+        AlertDialog.Builder builder = new AlertDialog.Builder(ListExampleActivity.this)
                 .setTitle("Select option ")
                 .setMultiChoiceItems(R.array.dialog_item, null, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int position, boolean b) {
-                        if(b){
-                            count[0] = count[0]+1;
-                        }else{
-                            count[0]=count[0]-1;
+                        if (b) {
+                            count[0] = count[0] + 1;
+                        } else {
+                            count[0] = count[0] - 1;
                         }
 
                     }
@@ -125,7 +123,7 @@ public class ListExampleActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
-                        Toast.makeText(ListExampleActivity.this, "Selected option count:"+ count[0], Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ListExampleActivity.this, "Selected option count:" + count[0], Toast.LENGTH_SHORT).show();
                     }
                 }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
@@ -134,22 +132,23 @@ public class ListExampleActivity extends AppCompatActivity {
                     }
                 });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.lv_menu,menu);
+        getMenuInflater().inflate(R.menu.lv_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_add:
-                listItems.add(new ListData("New title","This is description for title"));
+                listItems.add(new ListData("New name", "New Address"));
                 mAdapter.notifyDataSetChanged();
                 break;
             case R.id.action_delete:
-//                listItems.remove(0);   // Remove first items
-                listItems.remove(listItems.size()-1);  // Remove last items
+//                listItems.remove(0);      Remove first items
+                listItems.remove(listItems.size() - 1);  // Remove last items
                 mAdapter.notifyDataSetChanged();
                 break;
             case android.R.id.home:
@@ -161,13 +160,13 @@ public class ListExampleActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void showCustomDialog(){
+    public void showCustomDialog() {
         View dialogView = LayoutInflater.from(this)
-                .inflate(R.layout.custom_dialog,null,false);
+                .inflate(R.layout.custom_dialog, null, false);
 
 
-        EditText edtName,edtAddress;
-        Button btnOk,btnCancel;
+        EditText edtName, edtAddress;
+        Button btnOk, btnCancel;
 
         edtName = dialogView.findViewById(R.id.edtName);
         edtAddress = dialogView.findViewById(R.id.edt_addr);
@@ -192,15 +191,14 @@ public class ListExampleActivity extends AppCompatActivity {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!edtName.getText().toString().isEmpty() && !edtAddress.getText().toString().isEmpty()){
-                    listItems.add(new ListData(edtName.getText().toString(),edtAddress.getText().toString()));
+                if (!edtName.getText().toString().isEmpty() && !edtAddress.getText().toString().isEmpty()) {
+                    listItems.add(new ListData(edtName.getText().toString(), edtAddress.getText().toString()));
                     mAdapter.notifyDataSetChanged();
-                    dialog.dismiss();
-                }else{
-                    if(edtName.getText().toString().isEmpty()){
-                        edtName.setError("No Title found");
-                    }else if(edtAddress.getText().toString().isEmpty()){
-                        edtAddress.setError("No Description found");
+                } else {
+                    if (edtName.getText().toString().isEmpty()) {
+                        edtName.setError("No Name found");
+                    } else if (edtAddress.getText().toString().isEmpty()) {
+                        edtAddress.setError("No Address found");
                     }
                 }
 

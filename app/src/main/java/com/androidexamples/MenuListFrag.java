@@ -18,36 +18,32 @@ public class MenuListFrag extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.menu_list, container, false);
-
-//finding view
+//      finding view
         optMenu = view.findViewById(R.id.opt_menu);
         ctxMenu = view.findViewById(R.id.ctx_menu);
 
         registerForContextMenu(ctxMenu);
 
-
         optMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MenuListFrag menuFrag = new MenuListFrag();
-                FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container,new OptionMenuFrag());
+                FragmentTransaction ft = getFragmentManager().beginTransaction()
+                        .replace(R.id.container, new OptionMenuFrag());
                 ft.commit();
             }
         });
-
         return view;
     }
 
-
     @Override
-    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v,
+                                    @Nullable ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.opt_menu,menu);
+        inflater.inflate(R.menu.opt_menu, menu);
     }
-
-
-
 }

@@ -13,7 +13,8 @@ import androidx.fragment.app.Fragment;
 public class ConstraintLayoutFrag extends Fragment {
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.constraint_layout, container, false);
         return view;
     }
